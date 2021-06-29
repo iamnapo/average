@@ -1,0 +1,50 @@
+{
+  "name": "@iamnapo/average",
+  "version": "0.0.0",
+  "description": "Small utility function to calculate the average value of an array",
+  "keywords": [
+    "array",
+    "average",
+    "mean",
+    "math"
+  ],
+  "homepage": "https://github.com/iamnapo/average#readme",
+  "bugs": {
+    "url": "https://github.com/iamnapo/average/issues"
+  },
+  "repository": "github:iamnapo/average",
+  "license": "MIT",
+  "author": {
+    "name": "Napoleon-Christos Oikonomou",
+    "email": "napoleonoikon@gmail.com",
+    "url": "https://iamnapo.me"
+  },
+  "sideEffects": false,
+  "type": "module",
+  "exports": "./index.js",
+  "files": [
+    "index.js",
+    "index.d.ts"
+  ],
+  "scripts": {
+    "lint": "eslint . --cache",
+    "start": "node index.js",
+    "test": "npm run lint && ava"
+  },
+  "eslintConfig": {
+    "extends": "iamnapo"
+  },
+  "devDependencies": {
+    "ava": "^3.15.0",
+    "eslint": "^7.29.0",
+    "eslint-config-iamnapo": "^15.0.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-unicorn": "^34.0.0"
+  },
+  "engines": {
+    "node": ">=12"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
