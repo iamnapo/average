@@ -17,6 +17,7 @@ import average from "@iamnapo/average";
 
 average([0, 1, 2, 3, 4, 5]); // => 2.5
 average([0, 1, 2, 3, 4, 5], { excludeZeroes: true }); // => 3
+average([0, 1, 2, Number.NaN, undefined], { excludeFalsies: true }); // => 1.5
 average([{ name: "iamnapo", age: 28 }, { age: 28 }, { name: "Alice", age: 25 }], { get: (v) => v.age }); // => 27
 average([]); // => NaN
 ```
@@ -45,6 +46,13 @@ Type: `boolean`\
 Default: `false`
 
 Exclude zero values from the calculation.
+
+##### excludeFalsies
+
+Type: `boolean`\
+Default: `false`
+
+Exclude [falsy](https://developer.mozilla.org/en-US/docs/Glossary/Falsy) values from the calculation.
 
 ##### get
 
