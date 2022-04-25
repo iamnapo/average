@@ -1,51 +1,62 @@
 {
-  "name": "@iamnapo/average",
-  "version": "1.1.0",
-  "description": "Small utility function to calculate the average value of an array",
-  "keywords": [
-    "array",
-    "average",
-    "mean",
-    "math"
-  ],
-  "homepage": "https://github.com/iamnapo/average#readme",
-  "bugs": {
-    "url": "https://github.com/iamnapo/average/issues"
-  },
-  "repository": "github:iamnapo/average",
-  "license": "MIT",
-  "author": {
-    "name": "Napoleon-Christos Oikonomou",
-    "email": "napoleonoikon@gmail.com",
-    "url": "https://iamnapo.me"
-  },
-  "sideEffects": false,
-  "type": "module",
-  "exports": "./index.js",
-  "files": [
-    "index.js",
-    "index.d.ts"
-  ],
-  "scripts": {
-    "lint": "eslint . --cache",
-    "start": "node index.js",
-    "test": "npm run lint && ava && tsd"
-  },
-  "eslintConfig": {
-    "extends": "iamnapo"
-  },
-  "devDependencies": {
-    "ava": "^3.15.0",
-    "eslint": "^7.29.0",
-    "eslint-config-iamnapo": "^15.0.0",
-    "eslint-plugin-import": "^2.23.4",
-    "eslint-plugin-unicorn": "^34.0.0",
-    "tsd": "^0.17.0"
-  },
-  "engines": {
-    "node": ">=12"
-  },
-  "publishConfig": {
-    "access": "public"
-  }
+	"name": "@iamnapo/average",
+	"version": "1.1.0",
+	"description": "Small utility function to calculate the average value of an array",
+	"keywords": [
+		"array",
+		"average",
+		"mean",
+		"math"
+	],
+	"homepage": "https://github.com/iamnapo/average#readme",
+	"bugs": {
+		"url": "https://github.com/iamnapo/average/issues"
+	},
+	"repository": "github:iamnapo/average",
+	"license": "MIT",
+	"author": {
+		"name": "Napoleon-Christos Oikonomou",
+		"email": "napoleonoikon@gmail.com",
+		"url": "https://iamnapo.me"
+	},
+	"type": "module",
+	"exports": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"files": [
+		"dist/index.js",
+		"dist/index.d.ts"
+	],
+	"scripts": {
+		"build": "tsc",
+		"lint": "eslint . --ext .ts --cache",
+		"prepare": "npm run build",
+		"test": "npm run lint && ava"
+	},
+	"eslintConfig": {
+		"extends": "iamnapo/typescript",
+		"ignorePatterns": "dist"
+	},
+	"ava": {
+		"timeout": "1m",
+		"typescript": {
+			"rewritePaths": {
+				"/": "dist/"
+			},
+			"compile": "tsc"
+		}
+	},
+	"devDependencies": {
+		"@ava/typescript": "^3.0.1",
+		"@iamnapo/tsconfig": "^1.0.0",
+		"ava": "^4.2.0",
+		"eslint": "^8.14.0",
+		"eslint-config-iamnapo": "^24.1.0",
+		"typescript": "^4.6.3"
+	},
+	"engines": {
+		"node": ">=12"
+	},
+	"publishConfig": {
+		"access": "public"
+	}
 }
