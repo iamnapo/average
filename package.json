@@ -1,6 +1,6 @@
 {
 	"name": "@iamnapo/average",
-	"version": "1.1.0",
+	"version": "1.2.0",
 	"description": "Small utility function to calculate the average value of an array",
 	"keywords": [
 		"array",
