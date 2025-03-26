@@ -2,7 +2,7 @@
 
 > Small utility function to calculate the average value of an array
 
-[![build](https://badges.iamnapo.me/ci/iamnapo/average)](https://github.com/iamnapo/average/actions) [![npm](https://badges.iamnapo.me/npm/@iamnapo/average)](https://www.npmjs.com/package/@iamnapo/average) [![size](https://badges.iamnapo.me/size/@iamnapo/average)](https://bundlephobia.com/result?p=@iamnapo/average)
+[![build](https://badges.iamnapo.me/ci/iamnapo/average)](https://github.com/iamnapo/average/actions) [![npm](https://badges.iamnapo.me/npm/@iamnapo/average)](https://www.npmjs.com/package/@iamnapo/average)
 
 ## Install
 

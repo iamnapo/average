@@ -17,11 +17,14 @@ const average = (input: unknown[], options: Options = {}) => {
 	const count = options.excludeFalsies || options.excludeZeroes ? input.filter(options.get).length : input.length;
 	if (!count) return Number.NaN;
 
-	const sum = input.reduce((accumulator: number, currentValue) => {
-		const term = options.get!(currentValue);
-		if (options.excludeFalsies && !term) return accumulator;
-		return accumulator + term;
-	}, 0);
+	let sum = 0;
+
+	for (const currentValue of input) {
+		const term = options.get(currentValue);
+		if (term || !options.excludeFalsies) {
+			sum += term;
+		}
+	}
 
 	return sum / count;
 };

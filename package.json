@@ -20,43 +20,29 @@
 		"url": "https://iamnapo.me"
 	},
 	"type": "module",
-	"exports": "./dist/index.js",
-	"types": "./dist/index.d.ts",
+	"exports": "./distribution/source/index.js",
+	"types": "./distribution/source/index.d.ts",
 	"files": [
-		"dist/index.js",
-		"dist/index.d.ts"
+		"distribution/source"
 	],
 	"scripts": {
 		"build": "tsc",
-		"lint": "eslint . --ext .ts --cache",
+		"lint": "eslint --cache",
 		"prepare": "npm run build",
-		"test": "npm run lint && ava"
-	},
-	"eslintConfig": {
-		"extends": "iamnapo/typescript",
-		"ignorePatterns": "dist"
-	},
-	"ava": {
-		"timeout": "1m",
-		"typescript": {
-			"rewritePaths": {
-				"/": "dist/"
-			},
-			"compile": "tsc"
-		}
+		"test": "npm run lint && npm run build && node --test distribution/tests/*.js"
 	},
 	"devDependencies": {
-		"@ava/typescript": "^3.0.1",
-		"@iamnapo/tsconfig": "^2.0.0",
-		"ava": "^4.3.0",
-		"eslint": "^8.18.0",
-		"eslint-config-iamnapo": "^25.0.0",
-		"typescript": "^4.7.4"
+		"@iamnapo/tsconfig": "^7.0.1",
+		"@types/node": "^22.13.13",
+		"eslint": "^9.23.0",
+		"eslint-config-iamnapo": "^38.0.0",
+		"typescript": "^5.8.2"
 	},
 	"engines": {
-		"node": ">=12"
+		"node": ">=22"
 	},
 	"publishConfig": {
-		"access": "public"
+		"access": "public",
+		"provenance": true
 	}
 }
